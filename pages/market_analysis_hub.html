@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market Analysis Hub - AskMeCrypto</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2FAskMeCrypto8131back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-surface min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-secondary-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7l13 5 13-5-13-5zM3 16l13 5 13-5M3 25l13 5 13-5"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-secondary-900">AskMeCrypto</h1>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <input type="text" class="input-field pl-10" placeholder="Search analysis reports..." id="analysisSearch" />
+                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <kbd class="px-2 py-1 text-xs font-semibold text-secondary-500 bg-secondary-100 border border-secondary-300 rounded">⌘K</kbd>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="market_overview_dashboard.html" class="text-secondary-600 hover:text-secondary-900 transition-quick">Market</a>
+                    <a href="portfolio_tracker.html" class="text-secondary-600 hover:text-secondary-900 transition-quick">Portfolio</a>
+                    <a href="market_analysis_hub.html" class="text-primary font-medium border-b-2 border-primary pb-4">Analysis</a>
+                    <a href="account_dashboard.html" class="text-secondary-600 hover:text-secondary-900 transition-quick">Account</a>
+                </nav>
+
+                <!-- User Menu -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-secondary-600 hover:text-secondary-900 transition-quick">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12"/>
+                        </svg>
+                    </button>
+                    <div class="h-8 w-8 bg-primary rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-medium">JD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Live Market Ticker -->
+    <div class="bg-secondary-900 text-white py-2 overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap">
+            <span class="mx-8">BTC: $43,250.00 <span class="text-success">+2.4%</span></span>
+            <span class="mx-8">ETH: $2,680.50 <span class="text-error">-1.2%</span></span>
+            <span class="mx-8">BNB: $315.75 <span class="text-success">+0.8%</span></span>
+            <span class="mx-8">ADA: $0.485 <span class="text-success">+3.1%</span></span>
+            <span class="mx-8">SOL: $98.20 <span class="text-error">-0.5%</span></span>
+            <span class="mx-8">XRP: $0.625 <span class="text-success">+1.9%</span></span>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex gap-8">
+            <!-- Sidebar -->
+            <aside class="w-64 flex-shrink-0">
+                <div class="card space-y-6">
+                    <!-- Analysis Categories -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-900 mb-4">Analysis Categories</h3>
+                        <div class="space-y-2">
+                            <button class="w-full text-left px-3 py-2 text-sm bg-primary-50 text-primary rounded-lg">All Reports</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">Market Trends</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">Technical Analysis</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">Fundamental Analysis</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">Sentiment Analysis</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">Educational</button>
+                        </div>
+                    </div>
+
+                    <!-- Time Filters -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-900 mb-4">Time Period</h3>
+                        <div class="space-y-2">
+                            <button class="w-full text-left px-3 py-2 text-sm bg-primary-50 text-primary rounded-lg">Today</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">This Week</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">This Month</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">Last 3 Months</button>
+                            <button class="w-full text-left px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">Custom Range</button>
+                        </div>
+                    </div>
+
+                    <!-- Expert Analysts -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-900 mb-4">Expert Analysts</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Michael Chen" class="w-8 h-8 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="text-sm font-medium text-secondary-900">Michael Chen</div>
+                                    <div class="text-xs text-secondary-500">Senior Analyst</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?w=32&h=32&fit=crop&crop=face" alt="Sarah Rodriguez" class="w-8 h-8 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="text-sm font-medium text-secondary-900">Sarah Rodriguez</div>
+                                    <div class="text-xs text-secondary-500">Market Strategist</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg?w=32&h=32&fit=crop&crop=face" alt="David Kim" class="w-8 h-8 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="text-sm font-medium text-secondary-900">David Kim</div>
+                                    <div class="text-xs text-secondary-500">Technical Expert</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1">
+                <!-- Dashboard Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h1 class="text-3xl font-bold text-secondary-900">Market Analysis Hub</h1>
+                        <p class="text-secondary-600 mt-1">Professional insights and trend analysis for informed decision-making</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2 text-sm text-secondary-600">
+                            <div class="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                            <span>Live Analysis</span>
+                        </div>
+                        <button class="btn-secondary">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                            </svg>
+                            Share Research
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Market Intelligence Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">Market Sentiment</p>
+                                <p class="text-2xl font-bold text-secondary-900">Bullish</p>
+                                <p class="text-success text-sm">+12% (24h)</p>
+                            </div>
+                            <div class="w-12 h-12 bg-success-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">Volatility Index</p>
+                                <p class="text-2xl font-bold text-secondary-900">68.4</p>
+                                <p class="text-warning text-sm">Moderate</p>
+                            </div>
+                            <div class="w-12 h-12 bg-warning-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">Active Reports</p>
+                                <p class="text-2xl font-bold text-secondary-900">247</p>
+                                <p class="text-success text-sm">+18 today</p>
+                            </div>
+                            <div class="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">Accuracy Score</p>
+                                <p class="text-2xl font-bold text-secondary-900">94.2%</p>
+                                <p class="text-success text-sm">+1.8% (30d)</p>
+                            </div>
+                            <div class="w-12 h-12 bg-accent-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Analysis Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                    <!-- Main Featured Report -->
+                    <div class="lg:col-span-2">
+                        <div class="card-elevated">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Michael Chen" class="w-10 h-10 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-secondary-900">Bitcoin's Path to $50K: Technical Analysis</h3>
+                                        <p class="text-sm text-secondary-600">By Michael Chen • 2 hours ago</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 bg-success-100 text-success-700 text-xs font-medium rounded-full">Bullish</span>
+                            </div>
+                            <div class="mb-4">
+                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=300&fit=crop" alt="Bitcoin Chart Analysis" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            </div>
+                            <p class="text-secondary-700 mb-4">Our comprehensive technical analysis reveals strong bullish indicators for Bitcoin, with key resistance levels being tested. The formation of a ascending triangle pattern suggests potential breakout above $45,000...</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4 text-sm text-secondary-600">
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        2,847 views
+                                    </span>
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                                        </svg>
+                                        124 comments
+                                    </span>
+                                </div>
+                                <button class="btn-primary">Read Full Report</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trending Analysis -->
+                    <div class="space-y-6">
+                        <div class="card">
+                            <h3 class="text-lg font-semibold text-secondary-900 mb-4">Trending Analysis</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-success rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-secondary-900 text-sm">Ethereum 2.0 Impact Analysis</h4>
+                                        <p class="text-xs text-secondary-600 mt-1">Staking rewards driving institutional adoption</p>
+                                        <div class="flex items-center mt-2 text-xs text-secondary-500">
+                                            <span>Sarah Rodriguez</span>
+                                            <span class="mx-2">•</span>
+                                            <span>4h ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-warning rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-secondary-900 text-sm">DeFi Yield Farming Risks</h4>
+                                        <p class="text-xs text-secondary-600 mt-1">Comprehensive risk assessment framework</p>
+                                        <div class="flex items-center mt-2 text-xs text-secondary-500">
+                                            <span>David Kim</span>
+                                            <span class="mx-2">•</span>
+                                            <span>6h ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-error rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-secondary-900 text-sm">Altcoin Season Indicators</h4>
+                                        <p class="text-xs text-secondary-600 mt-1">Market rotation patterns and timing</p>
+                                        <div class="flex items-center mt-2 text-xs text-secondary-500">
+                                            <span>Michael Chen</span>
+                                            <span class="mx-2">•</span>
+                                            <span>8h ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Market Sentiment Widget -->
+                        <div class="card">
+                            <h3 class="text-lg font-semibold text-secondary-900 mb-4">Live Sentiment</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-secondary-600">Fear & Greed Index</span>
+                                    <span class="text-sm font-mono">68/100</span>
+                                </div>
+                                <div class="w-full bg-secondary-200 rounded-full h-2">
+                                    <div class="bg-success h-2 rounded-full" style="width: 68%"></div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-secondary-600">Social Volume</span>
+                                    <span class="text-sm font-mono text-success">+24%</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-secondary-600">News Sentiment</span>
+                                    <span class="text-sm font-mono text-success">Positive</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Reports Grid -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-secondary-900">Latest Analysis Reports</h2>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-2">
+                                <button class="p-2 text-secondary-600 hover:text-secondary-900 transition-quick">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z"/>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-secondary-600 hover:text-secondary-900 transition-quick">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <select class="input-field text-sm w-40">
+                                <option>All Categories</option>
+                                <option>Technical Analysis</option>
+                                <option>Market Trends</option>
+                                <option>Fundamental Analysis</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Report Card 1 -->
+                        <div class="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-quick">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded">Technical</span>
+                                <span class="text-xs text-secondary-500">Sep 25, 2025</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-900 mb-2">Solana Network Performance Analysis</h3>
+                            <p class="text-sm text-secondary-600 mb-3">Deep dive into Solana's recent network improvements and their impact on price action...</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg?w=24&h=24&fit=crop&crop=face" alt="David Kim" class="w-6 h-6 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <span class="text-xs text-secondary-600">David Kim</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="p-1 text-secondary-400 hover:text-warning transition-quick">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="p-1 text-secondary-400 hover:text-primary transition-quick">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Report Card 2 -->
+                        <div class="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-quick">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2 py-1 bg-success-100 text-success-700 text-xs font-medium rounded">Fundamental</span>
+                                <span class="text-xs text-secondary-500">Sep 24, 2025</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-900 mb-2">Cardano Ecosystem Growth Report</h3>
+                            <p class="text-sm text-secondary-600 mb-3">Analyzing the expansion of dApps and developer activity on the Cardano blockchain...</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?w=24&h=24&fit=crop&crop=face" alt="Sarah Rodriguez" class="w-6 h-6 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <span class="text-xs text-secondary-600">Sarah Rodriguez</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="p-1 text-secondary-400 hover:text-warning transition-quick">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="p-1 text-secondary-400 hover:text-primary transition-quick">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Report Card 3 -->
+                        <div class="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-quick">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2 py-1 bg-warning-100 text-warning-700 text-xs font-medium rounded">Market Trends</span>
+                                <span class="text-xs text-secondary-500">Sep 24, 2025</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-900 mb-2">Institutional Adoption Patterns</h3>
+                            <p class="text-sm text-secondary-600 mb-3">Tracking corporate treasury allocations and institutional investment flows...</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=24&h=24&fit=crop&crop=face" alt="Michael Chen" class="w-6 h-6 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <span class="text-xs text-secondary-600">Michael Chen</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="p-1 text-secondary-400 hover:text-warning transition-quick">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="p-1 text-secondary-400 hover:text-primary transition-quick">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Report Card 4 -->
+                        <div class="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-quick">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2 py-1 bg-accent-100 text-accent-700 text-xs font-medium rounded">Sentiment</span>
+                                <span class="text-xs text-secondary-500">Sep 23, 2025</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-900 mb-2">Social Media Impact Analysis</h3>
+                            <p class="text-sm text-secondary-600 mb-3">Correlation between social sentiment and price movements across major platforms...</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?w=24&h=24&fit=crop&crop=face" alt="Sarah Rodriguez" class="w-6 h-6 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <span class="text-xs text-secondary-600">Sarah Rodriguez</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="p-1 text-secondary-400 hover:text-warning transition-quick">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="p-1 text-secondary-400 hover:text-primary transition-quick">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Report Card 5 -->
+                        <div class="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-quick">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2 py-1 bg-error-100 text-error-700 text-xs font-medium rounded">Risk Analysis</span>
+                                <span class="text-xs text-secondary-500">Sep 23, 2025</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-900 mb-2">Regulatory Impact Assessment</h3>
+                            <p class="text-sm text-secondary-600 mb-3">Evaluating potential regulatory changes and their market implications...</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg?w=24&h=24&fit=crop&crop=face" alt="David Kim" class="w-6 h-6 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <span class="text-xs text-secondary-600">David Kim</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="p-1 text-secondary-400 hover:text-warning transition-quick">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="p-1 text-secondary-400 hover:text-primary transition-quick">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Report Card 6 -->
+                        <div class="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-quick">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs font-medium rounded">Educational</span>
+                                <span class="text-xs text-secondary-500">Sep 22, 2025</span>
+                            </div>
+                            <h3 class="font-semibold text-secondary-900 mb-2">DeFi Yield Strategies Guide</h3>
+                            <p class="text-sm text-secondary-600 mb-3">Comprehensive guide to yield farming strategies and risk management...</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=24&h=24&fit=crop&crop=face" alt="Michael Chen" class="w-6 h-6 rounded-full" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <span class="text-xs text-secondary-600">Michael Chen</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="p-1 text-secondary-400 hover:text-warning transition-quick">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="p-1 text-secondary-400 hover:text-primary transition-quick">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-6 pt-6 border-t border-secondary-200">
+                        <div class="text-sm text-secondary-600">
+                            Showing 1-6 of 247 analysis reports
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-2 text-sm border border-secondary-300 rounded-lg text-secondary-600 hover:bg-secondary-50 transition-quick">Previous</button>
+                            <button class="px-3 py-2 text-sm bg-primary text-white rounded-lg">1</button>
+                            <button class="px-3 py-2 text-sm border border-secondary-300 rounded-lg text-secondary-600 hover:bg-secondary-50 transition-quick">2</button>
+                            <button class="px-3 py-2 text-sm border border-secondary-300 rounded-lg text-secondary-600 hover:bg-secondary-50 transition-quick">3</button>
+                            <button class="px-3 py-2 text-sm border border-secondary-300 rounded-lg text-secondary-600 hover:bg-secondary-50 transition-quick">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Industry Recognition Section -->
+    <div class="bg-primary-50 py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-secondary-900 mb-4">Trusted by Industry Leaders</h2>
+                <p class="text-secondary-600">Our analysis has been recognized by leading financial institutions and crypto organizations</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="flex items-center justify-center">
+                    <div class="text-secondary-400 font-semibold text-lg">CoinDesk</div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-secondary-400 font-semibold text-lg">Bloomberg</div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-secondary-400 font-semibold text-lg">Reuters</div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-secondary-400 font-semibold text-lg">Forbes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Success Story -->
+    <div class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <blockquote class="text-lg text-secondary-700 italic">
+                    "AskMeCrypto's analysis reports have transformed our investment strategy. The clean data presentation and expert insights help us make confident decisions in volatile markets."
+                </blockquote>
+                <div class="mt-4">
+                    <div class="font-medium text-secondary-900">Marcus Thompson</div>
+                    <div class="text-secondary-600">Portfolio Manager, Verified Professional</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7l13 5 13-5-13-5zM3 16l13 5 13-5M3 25l13 5 13-5"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">AskMeCrypto</span>
+                    </div>
+                    <p class="text-secondary-400">Market intelligence without the bloat. Professional crypto data, simplified.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2 text-secondary-400">
+                        <li><a href="market_overview_dashboard.html" class="hover:text-white transition-quick">Market Overview</a></li>
+                        <li><a href="portfolio_tracker.html" class="hover:text-white transition-quick">Portfolio Tracker</a></li>
+                        <li><a href="market_analysis_hub.html" class="hover:text-white transition-quick">Market Analysis</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">API Access</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-secondary-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Educational Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Market Reports</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-secondary-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Security</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-secondary-800 mt-8 pt-8 text-center text-secondary-400">
+                <p>© 2025 AskMeCrypto. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+
+    <script>
+        // Keyboard shortcut for search
+        document.addEventListener('keydown', function(e) {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                document.getElementById('analysisSearch').focus();
+            }
+        });
+
+        // Add search functionality
+        document.getElementById('analysisSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const reportCards = document.querySelectorAll('.grid .border');
+            
+            reportCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Simulate real-time sentiment updates
+        function updateSentiment() {
+            const sentimentBar = document.querySelector('.bg-success');
+            const sentimentValue = Math.floor(Math.random() * 40) + 50; // 50-90 range
+            sentimentBar.style.width = sentimentValue + '%';
+            
+            const socialVolume = document.querySelector('.text-success');
+            const change = (Math.random() - 0.5) * 10; // ±5% change
+            socialVolume.textContent = (change >= 0 ? '+' : '') + change.toFixed(1) + '%';
+        }
+
+        // Update sentiment every 10 seconds
+        setInterval(updateSentiment, 10000);
+
+        // Add interactive filtering
+        document.querySelectorAll('aside button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active state from all buttons in the same section
+                const section = this.closest('div');
+                section.querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('bg-primary-50', 'text-primary');
+                    btn.classList.add('text-secondary-600');
+                });
+                
+                // Add active state to clicked button
+                this.classList.add('bg-primary-50', 'text-primary');
+                this.classList.remove('text-secondary-600');
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

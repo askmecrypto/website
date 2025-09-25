@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AskMeCrypto - Your Cryptocurrency Dashboard</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+        
+        /* Light theme loading page */
+        body:not(.dark) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        /* Dark theme loading page */
+        body.dark {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .loading-container {
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .loading-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Theme toggle for loading page */
+        .theme-toggle-loading {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .theme-toggle-loading:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .theme-toggle-loading svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2FAskMeCrypto8131back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="dark">
+    <!-- Theme Toggle Button for Loading Page -->
+    <button id="themeToggleLoading" class="theme-toggle-loading" title="Toggle theme">
+        <!-- Sun icon (for light mode) -->
+        <svg id="sunIconLoading" class="hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        <!-- Moon icon (for dark mode) -->
+        <svg id="moonIconLoading" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+    </button>
+
+    <div class="loading-container">
+        <div class="logo">AskMeCrypto</div>
+        <div class="loading-text">Loading your crypto dashboard...</div>
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // Theme Management for Loading Page
+        class LoadingThemeManager {
+            constructor() {
+                this.themeToggle = document.getElementById('themeToggleLoading');
+                this.sunIcon = document.getElementById('sunIconLoading');
+                this.moonIcon = document.getElementById('moonIconLoading');
+                this.body = document.body;
+                
+                this.init();
+            }
+            
+            init() {
+                // Check for saved theme preference or default to dark mode
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+                    this.setLightTheme();
+                } else {
+                    this.setDarkTheme();
+                }
+                
+                // Add event listener for theme toggle
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            toggleTheme() {
+                if (this.body.classList.contains('dark')) {
+                    this.setLightTheme();
+                } else {
+                    this.setDarkTheme();
+                }
+            }
+            
+            setLightTheme() {
+                this.body.classList.remove('dark');
+                this.sunIcon.classList.add('hidden');
+                this.moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+            
+            setDarkTheme() {
+                this.body.classList.add('dark');
+                this.sunIcon.classList.remove('hidden');
+                this.moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Initialize theme manager for loading page
+        const loadingThemeManager = new LoadingThemeManager();
+
+        // Redirect to market overview dashboard after a brief loading animation
+        setTimeout(function() {
+            window.location.href = 'pages/market_overview_dashboard.html';
+        }, 2000);
+    </script>
+<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+</body>
+</html>

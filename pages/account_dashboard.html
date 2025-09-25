@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Dashboard - AskMeCrypto</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2FAskMeCrypto8131back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-surface min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-secondary-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7l13 5 13-5-13-5zM3 16l13 5 13-5M3 25l13 5 13-5"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-secondary-900">AskMeCrypto</h1>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <input type="text" class="input-field pl-10" placeholder="Search cryptocurrencies..." id="cryptoSearch" />
+                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <kbd class="px-2 py-1 text-xs font-semibold text-secondary-500 bg-secondary-100 border border-secondary-300 rounded">⌘K</kbd>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="market_overview_dashboard.html" class="text-secondary-600 hover:text-secondary-900 transition-quick">Market</a>
+                    <a href="portfolio_tracker.html" class="text-secondary-600 hover:text-secondary-900 transition-quick">Portfolio</a>
+                    <a href="market_analysis_hub.html" class="text-secondary-600 hover:text-secondary-900 transition-quick">Analysis</a>
+                    <a href="account_dashboard.html" class="text-primary font-medium border-b-2 border-primary pb-4">Account</a>
+                </nav>
+
+                <!-- User Menu -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-secondary-600 hover:text-secondary-900 transition-quick">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12"/>
+                        </svg>
+                    </button>
+                    <div class="h-8 w-8 bg-primary rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-medium">JD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Live Market Ticker -->
+    <div class="bg-secondary-900 text-white py-2 overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap">
+            <span class="mx-8">BTC: $43,250.00 <span class="text-success">+2.4%</span></span>
+            <span class="mx-8">ETH: $2,680.50 <span class="text-error">-1.2%</span></span>
+            <span class="mx-8">BNB: $315.75 <span class="text-success">+0.8%</span></span>
+            <span class="mx-8">ADA: $0.485 <span class="text-success">+3.1%</span></span>
+            <span class="mx-8">SOL: $98.20 <span class="text-error">-0.5%</span></span>
+            <span class="mx-8">XRP: $0.625 <span class="text-success">+1.9%</span></span>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex gap-8">
+            <!-- Sidebar -->
+            <aside class="w-64 flex-shrink-0">
+                <div class="card space-y-6">
+                    <!-- User Profile -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl font-bold">JD</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-secondary-900">Ravikant</h3>
+                        <p class="text-secondary-600 text-sm">Premium Member</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                Pro Trader
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div>
+                        <h4 class="text-sm font-semibold text-secondary-900 mb-3">Quick Stats</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-secondary-600">Portfolio Value</span>
+                                <span class="font-mono text-secondary-900">$24,580</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-secondary-600">24h P&L</span>
+                                <span class="font-mono text-success">+$1,240</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-secondary-600">Active Alerts</span>
+                                <span class="font-mono text-secondary-900">12</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-secondary-600">Watchlist Items</span>
+                                <span class="font-mono text-secondary-900">28</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <div>
+                        <h4 class="text-sm font-semibold text-secondary-900 mb-3">Account Menu</h4>
+                        <nav class="space-y-1">
+                            <a href="#dashboard" class="flex items-center px-3 py-2 text-sm bg-primary-50 text-primary rounded-lg">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                                </svg>
+                                Dashboard
+                            </a>
+                            <a href="#alerts" class="flex items-center px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12"/>
+                                </svg>
+                                Alerts & Notifications
+                            </a>
+                            <a href="#watchlist" class="flex items-center px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                                </svg>
+                                Watchlists
+                            </a>
+                            <a href="#subscription" class="flex items-center px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                </svg>
+                                Subscription
+                            </a>
+                            <a href="#security" class="flex items-center px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Security
+                            </a>
+                            <a href="#preferences" class="flex items-center px-3 py-2 text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-quick">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                Preferences
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1">
+                <!-- Dashboard Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h1 class="text-3xl font-bold text-secondary-900">Account Dashboard</h1>
+                        <p class="text-secondary-600 mt-1">Manage your personalized crypto experience</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2 text-sm text-secondary-600">
+                            <div class="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                            <span>Last updated: 2 min ago</span>
+                        </div>
+                        <button class="btn-secondary">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
+                            </svg>
+                            Customize Layout
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Overview Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">Portfolio Value</p>
+                                <p class="text-2xl font-bold text-secondary-900">$24,580</p>
+                                <p class="text-success text-sm">+5.2% (24h)</p>
+                            </div>
+                            <div class="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">Active Alerts</p>
+                                <p class="text-2xl font-bold text-secondary-900">12</p>
+                                <p class="text-accent text-sm">3 triggered today</p>
+                            </div>
+                            <div class="w-12 h-12 bg-accent-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 2L3 7l7 5 7-5-7-5zM3 16l7 5 7-5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">Watchlist Items</p>
+                                <p class="text-2xl font-bold text-secondary-900">28</p>
+                                <p class="text-warning text-sm">5 new additions</p>
+                            </div>
+                            <div class="w-12 h-12 bg-warning-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-secondary-600 text-sm">API Calls</p>
+                                <p class="text-2xl font-bold text-secondary-900">8,420</p>
+                                <p class="text-success text-sm">15% of limit used</p>
+                            </div>
+                            <div class="w-12 h-12 bg-success-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Dashboard Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left Column -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Recent Alerts -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-xl font-semibold text-secondary-900">Recent Alerts</h2>
+                                <a href="#alerts" class="text-primary hover:text-primary-700 text-sm font-medium transition-quick">View All</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-success-50 rounded-lg border border-success-200">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-2 h-2 bg-success rounded-full"></div>
+                                        <div>
+                                            <p class="font-medium text-secondary-900">BTC Price Alert</p>
+                                            <p class="text-sm text-secondary-600">Bitcoin reached $43,250 (target: $43,000)</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm text-secondary-500">2 min ago</p>
+                                        <button class="text-success hover:text-success-700 text-sm">Dismiss</button>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-4 bg-warning-50 rounded-lg border border-warning-200">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-2 h-2 bg-warning rounded-full"></div>
+                                        <div>
+                                            <p class="font-medium text-secondary-900">Volume Spike Alert</p>
+                                            <p class="text-sm text-secondary-600">ETH volume increased by 150% in last hour</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm text-secondary-500">15 min ago</p>
+                                        <button class="text-warning hover:text-warning-700 text-sm">Dismiss</button>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-4 bg-accent-50 rounded-lg border border-accent-200">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                        <div>
+                                            <p class="font-medium text-secondary-900">Portfolio Milestone</p>
+                                            <p class="text-sm text-secondary-600">Your portfolio reached $25,000 for the first time</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm text-secondary-500">1 hour ago</p>
+                                        <button class="text-accent hover:text-accent-700 text-sm">Dismiss</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Performance Chart -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-xl font-semibold text-secondary-900">Portfolio Performance</h2>
+                                <div class="flex items-center space-x-2">
+                                    <select class="input-field text-sm w-24">
+                                        <option>7D</option>
+                                        <option>30D</option>
+                                        <option>90D</option>
+                                        <option>1Y</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="h-64 flex items-center justify-center bg-secondary-50 rounded-lg">
+                                <svg viewBox="0 0 400 200" class="w-full h-full">
+                                    <!-- Chart Grid -->
+                                    <defs>
+                                        <pattern id="grid" width="40" height="20" patternUnits="userSpaceOnUse">
+                                            <path d="M 40 0 L 0 0 0 20" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+                                        </pattern>
+                                    </defs>
+                                    <rect width="400" height="200" fill="url(#grid)"/>
+                                    
+                                    <!-- Performance Line -->
+                                    <polyline points="20,160 60,140 100,120 140,100 180,80 220,70 260,85 300,75 340,60 380,50" fill="none" stroke="#1E40AF" stroke-width="3" stroke-linecap="round"/>
+                                    
+                                    <!-- Data Points -->
+                                    <circle cx="20" cy="160" r="4" fill="#1E40AF"/>
+                                    <circle cx="100" cy="120" r="4" fill="#1E40AF"/>
+                                    <circle cx="220" cy="70" r="4" fill="#1E40AF"/>
+                                    <circle cx="340" cy="60" r="4" fill="#1E40AF"/>
+                                    <circle cx="380" cy="50" r="4" fill="#1E40AF"/>
+                                </svg>
+                            </div>
+                            <div class="mt-4 flex items-center justify-between text-sm text-secondary-600">
+                                <span>7 days ago</span>
+                                <span class="font-medium text-success">+$1,240 (+5.2%)</span>
+                                <span>Today</span>
+                            </div>
+                        </div>
+
+                        <!-- Usage Analytics -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-xl font-semibold text-secondary-900">Usage Analytics</h2>
+                                <button class="text-primary hover:text-primary-700 text-sm font-medium transition-quick">View Details</button>
+                            </div>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="text-sm font-medium text-secondary-600 mb-3">API Usage</h3>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between text-sm">
+                                            <span>Market Data</span>
+                                            <span class="font-mono">4,250</span>
+                                        </div>
+                                        <div class="w-full bg-secondary-200 rounded-full h-2">
+                                            <div class="bg-primary h-2 rounded-full" style="width: 42.5%"></div>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Portfolio</span>
+                                            <span class="font-mono">2,180</span>
+                                        </div>
+                                        <div class="w-full bg-secondary-200 rounded-full h-2">
+                                            <div class="bg-accent h-2 rounded-full" style="width: 21.8%"></div>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Alerts</span>
+                                            <span class="font-mono">1,990</span>
+                                        </div>
+                                        <div class="w-full bg-secondary-200 rounded-full h-2">
+                                            <div class="bg-success h-2 rounded-full" style="width: 19.9%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-medium text-secondary-600 mb-3">Activity Summary</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-secondary-600">Login Sessions</span>
+                                            <span class="text-sm font-medium">47</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-secondary-600">Alerts Created</span>
+                                            <span class="text-sm font-medium">23</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-secondary-600">Watchlist Updates</span>
+                                            <span class="text-sm font-medium">156</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-secondary-600">Reports Generated</span>
+                                            <span class="text-sm font-medium">8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="space-y-8">
+                        <!-- Quick Actions -->
+                        <div class="card">
+                            <h2 class="text-lg font-semibold text-secondary-900 mb-4">Quick Actions</h2>
+                            <div class="space-y-3">
+                                <button class="w-full flex items-center justify-between p-3 bg-primary-50 hover:bg-primary-100 rounded-lg transition-quick">
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                        </svg>
+                                        <span class="text-primary font-medium">Create Alert</span>
+                                    </div>
+                                    <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+
+                                <button class="w-full flex items-center justify-between p-3 bg-secondary-50 hover:bg-secondary-100 rounded-lg transition-quick">
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                                        </svg>
+                                        <span class="text-secondary-700 font-medium">Add to Watchlist</span>
+                                    </div>
+                                    <svg class="w-4 h-4 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+
+                                <button class="w-full flex items-center justify-between p-3 bg-secondary-50 hover:bg-secondary-100 rounded-lg transition-quick">
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                        <span class="text-secondary-700 font-medium">Generate Report</span>
+                                    </div>
+                                    <svg class="w-4 h-4 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+
+                                <button class="w-full flex items-center justify-between p-3 bg-secondary-50 hover:bg-secondary-100 rounded-lg transition-quick">
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                        <span class="text-secondary-700 font-medium">Account Settings</span>
+                                    </div>
+                                    <svg class="w-4 h-4 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Subscription Status -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="text-lg font-semibold text-secondary-900">Subscription</h2>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                    Premium
+                                </span>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="text-secondary-600">API Calls Used</span>
+                                        <span class="font-mono">8,420 / 50,000</span>
+                                    </div>
+                                    <div class="w-full bg-secondary-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 16.84%"></div>
+                                    </div>
+                                </div>
+                                <div class="pt-4 border-t border-secondary-200">
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="text-secondary-600">Next Billing</span>
+                                        <span class="font-medium">Oct 25, 2025</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-secondary-600">Amount</span>
+                                        <span class="font-medium">$29.99/month</span>
+                                    </div>
+                                </div>
+                                <button class="w-full btn-secondary text-sm">Manage Subscription</button>
+                            </div>
+                        </div>
+
+                        <!-- Security Status -->
+                        <div class="card">
+                            <h2 class="text-lg font-semibold text-secondary-900 mb-4">Security Status</h2>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-2 h-2 bg-success rounded-full"></div>
+                                        <span class="text-sm text-secondary-700">Two-Factor Auth</span>
+                                    </div>
+                                    <span class="text-xs text-success font-medium">Enabled</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-2 h-2 bg-success rounded-full"></div>
+                                        <span class="text-sm text-secondary-700">Email Verification</span>
+                                    </div>
+                                    <span class="text-xs text-success font-medium">Verified</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-2 h-2 bg-warning rounded-full"></div>
+                                        <span class="text-sm text-secondary-700">Password Strength</span>
+                                    </div>
+                                    <span class="text-xs text-warning font-medium">Good</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-2 h-2 bg-success rounded-full"></div>
+                                        <span class="text-sm text-secondary-700">API Key Security</span>
+                                    </div>
+                                    <span class="text-xs text-success font-medium">Secure</span>
+                                </div>
+                            </div>
+                            <button class="w-full btn-secondary text-sm mt-4">Security Settings</button>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="card">
+                            <h2 class="text-lg font-semibold text-secondary-900 mb-4">Recent Activity</h2>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-secondary-900">Created price alert for BTC</p>
+                                        <p class="text-xs text-secondary-500">2 minutes ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-success rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-secondary-900">Added SOL to watchlist</p>
+                                        <p class="text-xs text-secondary-500">1 hour ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-accent rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-secondary-900">Generated portfolio report</p>
+                                        <p class="text-xs text-secondary-500">3 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-warning rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-secondary-900">Updated notification preferences</p>
+                                        <p class="text-xs text-secondary-500">1 day ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- User Testimonial -->
+    <div class="bg-primary-50 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <blockquote class="text-lg text-secondary-700 italic">
+                    "The personalized dashboard and smart alerts have completely transformed my trading workflow. I never miss important market movements anymore."
+                </blockquote>
+                <div class="mt-4">
+                    <div class="font-medium text-secondary-900">Michael Rodriguez</div>
+                    <div class="text-secondary-600">Day Trader, Premium User</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7l13 5 13-5-13-5zM3 16l13 5 13-5M3 25l13 5 13-5"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">AskMeCrypto</span>
+                    </div>
+                    <p class="text-secondary-400">Market intelligence without the bloat. Professional crypto data, simplified.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2 text-secondary-400">
+                        <li><a href="market_overview_dashboard.html" class="hover:text-white transition-quick">Market Overview</a></li>
+                        <li><a href="portfolio_tracker.html" class="hover:text-white transition-quick">Portfolio Tracker</a></li>
+                        <li><a href="market_analysis_hub.html" class="hover:text-white transition-quick">Market Analysis</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">API Access</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-secondary-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Educational Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Market Reports</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-secondary-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Security</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-quick">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-secondary-800 mt-8 pt-8 text-center text-secondary-400">
+                <p>© 2025 AskMeCrypto. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+
+    <script>
+        // Keyboard shortcut for search
+        document.addEventListener('keydown', function(e) {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                document.getElementById('cryptoSearch').focus();
+            }
+        });
+
+        // Simulate real-time updates
+        function updateDashboard() {
+            // Update portfolio value
+            const portfolioValue = document.querySelector('.text-2xl.font-bold.text-secondary-900');
+            if (portfolioValue && portfolioValue.textContent.includes('$24,')) {
+                const currentValue = parseFloat(portfolioValue.textContent.replace('$', '').replace(',', ''));
+                const change = (Math.random() - 0.5) * 100; // ±$50 change
+                const newValue = currentValue + change;
+                portfolioValue.textContent = '$' + newValue.toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                });
+            }
+
+            // Update last updated timestamp
+            const timestamp = document.querySelector('.text-sm.text-secondary-600 span');
+            if (timestamp && timestamp.textContent.includes('min ago')) {
+                const minutes = Math.floor(Math.random() * 5) + 1;
+                timestamp.textContent = `Last updated: ${minutes} min ago`;
+            }
+        }
+
+        // Update dashboard every 30 seconds
+        setInterval(updateDashboard, 30000);
+
+        // Add search functionality
+        document.getElementById('cryptoSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            // Implement search logic here
+            console.log('Searching for:', searchTerm);
+        });
+
+        // Handle quick action buttons
+        document.querySelectorAll('.card button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const action = this.querySelector('span').textContent;
+                console.log('Quick action:', action);
+                
+                // Add visual feedback
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Handle alert dismissal
+        document.querySelectorAll('button[class*="text-success"], button[class*="text-warning"], button[class*="text-accent"]').forEach(button => {
+            if (button.textContent === 'Dismiss') {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const alertBox = this.closest('.p-4');
+                    alertBox.style.opacity = '0';
+                    alertBox.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        alertBox.remove();
+                    }, 300);
+                });
+            }
+        });
+
+        // Simulate live data updates
+        function updateLiveData() {
+            const liveIndicator = document.querySelector('.animate-pulse');
+            if (liveIndicator) {
+                liveIndicator.style.opacity = '0.5';
+                setTimeout(() => {
+                    liveIndicator.style.opacity = '1';
+                }, 100);
+            }
+        }
+
+        // Update live indicators every 2 seconds
+        setInterval(updateLiveData, 2000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
